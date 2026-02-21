@@ -1,17 +1,107 @@
-# movie_list
+# Movie List App
+Movie detail screen with image slider and search functionality
 
-A new Flutter project.
+## 🎬 Features
+- Top-rated movies/series from IMDb JSON data
 
-## Getting Started
+- Live search by movie title (SQL ILIKE '%vatar%' → finds "Avatar")
 
-This project is a starting point for a Flutter application.
+- Image slider with dot indicators (swipe fixed for web/mobile)
 
-A few resources to get you started if this is your first Flutter project:
+- Responsive design - works on Android, iOS, Web (Chrome)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Dark cinema theme with custom red accent (#890707)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Smooth animations and Material Design cards
+
+- Proper state management with FutureBuilder + TextEditingController
+
+## 🚀 Quick Start
+#### Prerequisites
+- Flutter 3.0+ (flutter doctor)
+
+- Assets folder with `movies.json` and `cinema_bg.jpg`
+
+#### Installation
+````
+git clone https://github.com/mareerray/movie-list.git
+
+cd movie-list
+
+flutter pub get
+````
+
+#### Run
+````
+// Android/iOS
+
+flutter run
+
+// Web (Chrome)
+
+flutter run -d chrome
+````
+#### Build the App
+For Android:
+```dart
+flutter build apk --release
+```
+The APK file will be created at:
+```dart
+build/app/outputs/flutter-apk/app-release.apk
+````
+
+## 📱 Screenshots
+
+| Home Screen | Movie Details | Search |
+|-------------|---------------|--------|
+| ![Home](assets/images/home.png) | ![Details](assets/images/details.png) | ![Search](assets/images/search.png) |
+
+
+## 🛠 Technical Highlights
+
+####  Search (SQL ILIKE Equivalent)
+```dart
+movie.title.toLowerCase().contains(query)
+// "avatar".contains("vatar") = true ✅
+```
+
+#### Key Components
+
+````
+lib/
+├── models/movie.dart          # Movie data model
+├── services/movie_service.dart # JSON parsing + sorting by IMDb rating
+├── screens/
+│   ├── home_screen.dart       # FutureBuilder + live search
+│   └── movie_detail_screen.dart # PageView slider + PopScope
+└── assets/movies.json         # IMDb top-rated data
+````
+
+#### Web Fixes Applied
+- PopScope(canPop: true) - prevents swipe-back conflicts
+
+- web/index.html CSS - blocks browser back overscroll
+
+
+## 📝 Technical Requirements Met
+
+✅ Image slider with swipe navigation (web/mobile fixed)
+
+✅ Search by title with substring matching (case-insensitive)
+
+✅ Detail screen with movie info cards
+
+✅ Responsive backgrounds (no white space)
+
+✅ Proper memory management (dispose())
+
+✅ Sorted by IMDb rating (descending : hight to low)
+
+
+## Data source: 
+IMDb JSON dataset
+
+
+## Author
+[Mayuree Reunsati](https://github.com/mareerray)

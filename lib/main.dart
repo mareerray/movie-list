@@ -24,17 +24,17 @@ class MyApp extends StatelessWidget {
         
         // 📝 GLOBAL POPPINS FONT
         textTheme: TextTheme(
-          titleMedium: GoogleFonts.poppins(     // Movie titles
-            fontSize: 18,
+          titleMedium: GoogleFonts.lato(     // Movie titles
+            fontSize: 15,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
-          bodyMedium: GoogleFonts.poppins(      // Genre (smaller/paler)
-            fontSize: 14,
+          bodyMedium: GoogleFonts.lato(      // Genre (smaller/paler)
+            fontSize: 12,
             color: Colors.white70,
           ),
           headlineSmall: GoogleFonts.poppins(   // AppBar
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
@@ -46,11 +46,6 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
           elevation: 4,
           centerTitle: true,
-          titleTextStyle: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
         ),
         
         // 🃏 CARDS (dark semi-transparent)
@@ -72,8 +67,8 @@ class MyApp extends StatelessWidget {
         // ⭐ RATINGS (red pill style)
         chipTheme: ChipThemeData(
           backgroundColor: Color(0xFF890707),
-          labelStyle: TextStyle(
-            fontSize: 14,
+          labelStyle: GoogleFonts.poppins(
+            fontSize: 12,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),

@@ -20,6 +20,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF890707),
         title: Text('${widget.movie.title} (${widget.movie.year})'),
+        titleTextStyle: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
       ),
       
       // ======== Body with background image ========
@@ -39,7 +40,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
 
           // Scrollable content
           child: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 180),
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -60,9 +61,22 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
 
                 // 📝 PLOT CARD
                 _buildPlotCard(widget.movie.plot),
+                
+                SizedBox(height: 50),
               ],
             ),
           ),
+        ),
+      ),
+
+      // ======== Footer ========
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(20),
+        color: const Color(0xFF890707),
+        child: Text(
+          '© 2026 Movie List App. Data source: IMDb • made by Mayuree Reunsati',
+          style: Theme.of(context).textTheme.bodyMedium,
+          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -80,7 +94,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       children: [
         // Main slider
         SizedBox(
-          height: 300,
+          height: 380,
           child:Padding(
             padding: EdgeInsets.only(left: 15),
             child: PageView.builder(
@@ -171,13 +185,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           ),  
           SizedBox(width: 12),        
-          Expanded(child: Text(value, style: GoogleFonts.poppins(fontSize: 14, color: Colors.white))),
+          Expanded(child: Text(value, style: GoogleFonts.lato(fontSize: 14, color: Colors.white))),
         ],
       ),
     );
   }
 
-  // Builds a card specifically for the movie plot, with a different style
+  // Builds a card specifically for the movie plot, slightly a different style
   Widget _buildPlotCard(String plot) {
     return Container(
       width: double.infinity,
@@ -193,7 +207,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
         children: [
           Text('Plot:', style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF890707))),
           SizedBox(height: 12),
-          Text(plot, style: GoogleFonts.poppins(fontSize: 14, color: Colors.white, height: 1.6)),
+          Text(plot, style: GoogleFonts.lato(fontSize: 14, color: Colors.white, height: 1.6)),
         ],
       ),
     );

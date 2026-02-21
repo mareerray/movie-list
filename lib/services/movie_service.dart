@@ -22,13 +22,5 @@ Future<List<Movie>> loadMovies() async {
     // Sort in descending order (highest rating first)
     return ratingB.compareTo(ratingA);
   });
-
-  // 🍎 DEBUG: Print the top 5 movies to verify sorting and parsing
-  // print('=== TOP 5 MOVIES ===');
-  // for (int i = 0; i < movies.length && i < 5; i++) {
-  //   print('${i+1}. "${movies[i].title}" (${movies[i].imdbRating}) - ${movies[i].genre}');
-  // }
-  // print('Total movies: ${movies.length}');
-
   return movies;
 }
