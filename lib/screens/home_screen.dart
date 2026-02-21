@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Icon(Icons.movie),
             SizedBox(width: 10),
-            Text('Top Rated Movies/Series from IMDB', style: Theme.of(context).textTheme.headlineSmall),
+            Text('Top Rated Movies / Series from IMDB', style: Theme.of(context).textTheme.headlineSmall),
           ],
         ),
       ),

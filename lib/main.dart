@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             color: Colors.white70,
           ),
           headlineSmall: GoogleFonts.poppins(   // AppBar
-            fontSize: 22,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
