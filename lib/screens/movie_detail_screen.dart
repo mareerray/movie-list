@@ -94,7 +94,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       children: [
         // Main slider
         SizedBox(
-          height: 300,
+          height: 260,
           child:Padding(
             padding: EdgeInsets.only(left: 10),
             child: PageView.builder(
