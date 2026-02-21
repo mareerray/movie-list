@@ -94,9 +94,9 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
       children: [
         // Main slider
         SizedBox(
-          height: 380,
+          height: 300,
           child:Padding(
-            padding: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left: 10),
             child: PageView.builder(
               onPageChanged: (index) => setState(() => _currentImageIndex = index),
               itemCount: widget.movie.images.length,
